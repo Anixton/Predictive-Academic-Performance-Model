@@ -8,10 +8,10 @@ namespace Puan_Tahmini
 {
     public class Neuron
     {
-        private double weight1;
-        private double weight2;
+        private double weightOfStudy;
+        private double weightOfAttendance;
         private double bias;
-        private double mse = 0;
+        private double mse;
 
         // doubleArray[Çalışma Süresi, Derse Devam, Sınav Sonucu]
         public double[,] doubleArray = new double[21, 3]
@@ -39,11 +39,13 @@ namespace Puan_Tahmini
             {8.1, 11, 82}
         };
 
-        public Neuron(double weight1, double weight2, double bias)
+        public Neuron(double weight1, double weight2)
         {
-            this.weight1 = weight1;
-            this.weight2 = weight2;
-            this.bias = bias;
+            weightOfStudy = weight1;
+            weightOfAttendance = weight2;
+
+            bias = 0;
+            mse = 0;
 
             for (int i = 0; i < 21; i++)
             {
@@ -54,14 +56,13 @@ namespace Puan_Tahmini
 
         }
 
-        public double ComputeOutput(double input1, double input2)
+        public double ComputeOutput(double studyTime, double attendance)
         {
-            double output = (input1 * weight1) + (input2 * weight2) + bias;
-            return output;
+            double examResultPrediction = (studyTime * weightOfStudy) + (attendance * weightOfAttendance) + bias;
+            return examResultPrediction;
         }
 
-        // learningRate=0.05
-        // epch=10
+        
         public void Train(double learningRate, int epochs)
         {
             for (int epoch = 0; epoch < epochs; epoch++)
@@ -70,19 +71,19 @@ namespace Puan_Tahmini
 
                 for (int i = 0; i < doubleArray.GetLength(0); i++)
                 {
-                    double input1 = doubleArray[i, 0];
-                    double input2 = doubleArray[i, 1];
+                    double studyTimeInput = doubleArray[i, 0];
+                    double attendanceInput = doubleArray[i, 1];
                     double target = doubleArray[i, 2];
 
-                    double output = ComputeOutput(input1, input2);
+                    double output = ComputeOutput(studyTimeInput, attendanceInput);
                     double error = target - output;
 
-                    double deltaWeight1 = learningRate * error * input1;
-                    double deltaWeight2 = learningRate * error * input2;
+                    double deltaWeightOfStudy = learningRate * error * studyTimeInput;
+                    double deltaWeightOfAttendance = learningRate * error * attendanceInput;
                     double deltaBias = learningRate * error;
 
-                    weight1 += deltaWeight1;
-                    weight2 += deltaWeight2;
+                    weightOfStudy += deltaWeightOfStudy;
+                    weightOfAttendance += deltaWeightOfAttendance;
                     bias += deltaBias;
 
                     totalError += error;
@@ -91,7 +92,7 @@ namespace Puan_Tahmini
 
                 mse /= doubleArray.GetLength(0);
 
-                Console.WriteLine($"Epoch {epoch + 1}, Total Error: {totalError}");
+                Console.WriteLine($"Epoch {epoch + 1}, Total Error: {totalError}, MSE: {this.getMSE()}");
             }
         }
 
@@ -110,17 +111,18 @@ namespace Puan_Tahmini
             double[] inputs = { 2.0, 3.0 };
 
             // random positive values between 0.0 and 1
-            Random random = new Random();
+            int seed = 42;
+            Random random = new Random(seed);
             double randomDouble1 = random.NextDouble(); // Generates a random double between 0 (inclusive) and 1 (exclusive)
             double randomDouble2 = random.NextDouble(); // Generates another random double
 
             double[] weights = { randomDouble1 , randomDouble2};
 
-            Neuron ANN = new Neuron(randomDouble1, randomDouble1, 0);
+            Neuron ANN = new Neuron(randomDouble1, randomDouble1);
 
             Console.WriteLine(ANN.ComputeOutput(inputs[0], inputs[1]));
 
-            ANN.Train(0.05, 10);
+            ANN.Train(0.005, 10);
 
 
             // Display column labels with fixed-width columns

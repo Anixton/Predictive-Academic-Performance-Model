@@ -161,13 +161,14 @@ namespace Puan_Tahmini
 
 
 
-            ANN.Train(0.005, 10);
+            ANN.Train(0.05, 100);
 
-            ANN.makePrediction(9, 8);
-            ANN.makePrediction(7.5, 10);
-            ANN.makePrediction(9, 9);
-            ANN.makePrediction(8, 11);
-            ANN.makePrediction(10, 10);
+
+            //ANN.makePrediction(9, 8);
+            //ANN.makePrediction(7.5, 10);
+            //ANN.makePrediction(9, 9);
+            //ANN.makePrediction(8, 11);
+            //ANN.makePrediction(10, 10);
 
 
 

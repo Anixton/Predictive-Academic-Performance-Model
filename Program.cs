@@ -41,6 +41,8 @@ namespace Puan_Tahmini
             {8.1, 11, 82}
         };
 
+        // Constructor initializes the neural network with random weights and biases,
+        // as well as normalizes the training data to ensure consistent scales for inputs and outputs.
         public Neuron()
         {
 
@@ -67,13 +69,15 @@ namespace Puan_Tahmini
 
         }
 
+        // Compute the predicted exam result based on study time, attendance, and current weights
         public double ComputeOutput(double studyTime, double attendance)
         {
             double examResultPrediction = (studyTime * weightOfStudy) + (attendance * weightOfAttendance) + bias;
             return examResultPrediction;
         }
 
-        
+
+        // Train the neuron using the provided learning rate and number of epochs
         public void Train(double learningRate, int epochs)
         {
             for (int epoch = 0; epoch < epochs; epoch++)
@@ -109,6 +113,7 @@ namespace Puan_Tahmini
             targetExpectedComparison();
         }
 
+        // Display the comparison between target and expected values
         private void targetExpectedComparison()
         {
             // Display column labels with fixed-width columns
@@ -132,11 +137,13 @@ namespace Puan_Tahmini
             Console.WriteLine($"MSE: {this.getMSE()}");
         }
 
+        // Get the Mean Squared Error
         public double getMSE()
         {
             return mse;
         }
 
+        // Make predictions for given study time and attendance
         public void makePrediction(double studyTime, double attendanceTime)
         {
             double firstInput = (studyTime / 10);
@@ -157,13 +164,13 @@ namespace Puan_Tahmini
 
         static void Main(string[] args)
         {
-            Neuron ANN = new Neuron();
+            // 0.05 öğrenme katsayılı ve 10 epoklu eğitim
+            //Neuron ANN = new Neuron();
+            //ANN.Train(0.05, 100);
 
-
-
-            ANN.Train(0.05, 100);
-
-
+            // Modelin Görmediği veriden sınav sonucu tahmini
+            //Neuron ANN = new Neuron();
+            //ANN.Train(0.05, 100);
             //ANN.makePrediction(9, 8);
             //ANN.makePrediction(7.5, 10);
             //ANN.makePrediction(9, 9);
@@ -171,21 +178,42 @@ namespace Puan_Tahmini
             //ANN.makePrediction(10, 10);
 
 
+            // Farklı öğrenme katsayısı, epok sayısı ile karşılaştırma
+            //Neuron[] ANN=new Neuron[9];
+            //for (int i = 0;i<ANN.Length;i++)
+            //{
+            //    ANN[i] = new Neuron();
+            //}
+            //ANN[0].Train(0.01, 10);
+            //ANN[1].Train(0.01, 50);
+            //ANN[2].Train(0.01, 100);
+            //ANN[3].Train(0.025, 10);
+            //ANN[4].Train(0.025, 50);
+            //ANN[5].Train(0.025, 100);
+            //ANN[6].Train(0.05, 10);
+            //ANN[7].Train(0.05, 50);
+            //ANN[8].Train(0.05, 100);
+            //double[] mseArray= new double[9];
+
+            //for(int i = 0; i < mseArray.Length; i++)
+            //{
+            //    mseArray[i] = ANN[i].getMSE();
+            //}
+
+            //for(int j=0;j<mseArray.Length;j++)
+            //{
+            //    Console.WriteLine();
+            //    Console.WriteLine(mseArray[j]);
+            //}
 
 
-
-
-
-
-
-            // write MSE formula 
+             
             // In Statistics, Mean Squared Error (MSE) is defined as Mean or
             // Average of the square of the difference between actual and estimated values.
 
             //MSE is used to check how close estimates or forecasts are to actual values. Lower the MSE, the closer is forecast to actual.
             //This is used as a model evaluation measure for regression models and the lower value indicates a better fit
-            //purpose of mse above
-
+            
             // resource
             // https://www.mygreatlearning.com/blog/mean-square-error-explained/#:~:text=In%20Statistics%2C%20Mean%20Squared%20Error,between%20actual%20and%20estimated%20values.
 

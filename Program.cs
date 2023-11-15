@@ -195,6 +195,8 @@ namespace Puan_Tahmini
             //ANN[8].Train(0.05, 100);
             //double[] mseArray= new double[9];
 
+
+
             //for(int i = 0; i < mseArray.Length; i++)
             //{
             //    mseArray[i] = ANN[i].getMSE();
@@ -207,13 +209,46 @@ namespace Puan_Tahmini
             //}
 
 
-             
+            //// Learning Rate=0.001
+            //Neuron firstANN = new Neuron();
+            //firstANN.Train(0.001, 10);
+
+            //Neuron secondANN = new Neuron();
+            //secondANN.Train(0.001, 50);
+
+            //Neuron thirdANN = new Neuron();
+            //thirdANN.Train(0.001, 100);
+
+
+            //// Learning Rate=0.0025
+            //Neuron firstANN = new Neuron();
+            //firstANN.Train(0.0025, 10);
+
+            //Neuron secondANN = new Neuron();
+            //secondANN.Train(0.0025, 50);
+
+            //Neuron thirdANN = new Neuron();
+            //thirdANN.Train(0.0025, 100);
+
+
+            ////Learning Rate = 0.005
+            //Neuron firstANN = new Neuron();
+            //firstANN.Train(0.005, 10);
+
+            //Neuron secondANN = new Neuron();
+            //secondANN.Train(0.005, 50);
+
+            //Neuron thirdANN = new Neuron();
+            //thirdANN.Train(0.005, 100);
+
+
+
             // In Statistics, Mean Squared Error (MSE) is defined as Mean or
             // Average of the square of the difference between actual and estimated values.
 
             //MSE is used to check how close estimates or forecasts are to actual values. Lower the MSE, the closer is forecast to actual.
             //This is used as a model evaluation measure for regression models and the lower value indicates a better fit
-            
+
             // resource
             // https://www.mygreatlearning.com/blog/mean-square-error-explained/#:~:text=In%20Statistics%2C%20Mean%20Squared%20Error,between%20actual%20and%20estimated%20values.
 

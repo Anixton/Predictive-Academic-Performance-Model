@@ -164,6 +164,11 @@ namespace Puan_Tahmini
 
         static void Main(string[] args)
         {
+            // Note: This program is optimized for performance in release mode.
+            // Debugging and development may be more effective in debug mode.
+            // Be cautious when making changes and thoroughly test in both modes.
+
+
             // 0.05 öğrenme katsayılı ve 10 epoklu eğitim
             //Neuron ANN = new Neuron();
             //ANN.Train(0.05, 100);
@@ -179,8 +184,8 @@ namespace Puan_Tahmini
 
 
             // Farklı öğrenme katsayısı, epok sayısı ile karşılaştırma
-            //Neuron[] ANN=new Neuron[9];
-            //for (int i = 0;i<ANN.Length;i++)
+            //Neuron[] ANN = new Neuron[9];
+            //for (int i = 0; i < ANN.Length; i++)
             //{
             //    ANN[i] = new Neuron();
             //}
@@ -193,16 +198,14 @@ namespace Puan_Tahmini
             //ANN[6].Train(0.05, 10);
             //ANN[7].Train(0.05, 50);
             //ANN[8].Train(0.05, 100);
-            //double[] mseArray= new double[9];
+            //double[] mseArray = new double[9];
 
-
-
-            //for(int i = 0; i < mseArray.Length; i++)
+            //for (int i = 0; i < mseArray.Length; i++)
             //{
             //    mseArray[i] = ANN[i].getMSE();
             //}
 
-            //for(int j=0;j<mseArray.Length;j++)
+            //for (int j = 0; j < mseArray.Length; j++)
             //{
             //    Console.WriteLine();
             //    Console.WriteLine(mseArray[j]);

@@ -1,0 +1,7 @@
+C:\Users\hakan\source\repos\Puan_Tahmini\bin\Release\Puan_Tahmini.exe.config
+C:\Users\hakan\source\repos\Puan_Tahmini\bin\Release\Puan_Tahmini.exe
+C:\Users\hakan\source\repos\Puan_Tahmini\bin\Release\Puan_Tahmini.pdb
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Release\Puan_Tahmini.csproj.AssemblyReference.cache
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Release\Puan_Tahmini.csproj.CoreCompileInputs.cache
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Release\Puan_Tahmini.exe
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Release\Puan_Tahmini.pdb

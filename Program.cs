@@ -87,13 +87,17 @@ namespace Puan_Tahmini
 
                 for (int i = 0; i < doubleArray.GetLength(0); i++)
                 {
+                    // Calculate the output of the linear regression model based on study time and attendance input,
+                    // compute the error against the target value, and update weights and bias using gradient descent.
                     double studyTimeInput = doubleArray[i, 0];
                     double attendanceInput = doubleArray[i, 1];
                     double target = doubleArray[i, 2];
 
+                    // Calculate the model output and the error
                     double output = ComputeOutput(studyTimeInput, attendanceInput);
                     double error = target - output;
 
+                    // Update weights and bias using gradient descent
                     double deltaWeightOfStudy = learningRate * error * studyTimeInput;
                     double deltaWeightOfAttendance = learningRate * error * attendanceInput;
                     double deltaBias = learningRate * error;
@@ -102,6 +106,7 @@ namespace Puan_Tahmini
                     weightOfAttendance += deltaWeightOfAttendance;
                     bias += deltaBias;
 
+                    // Track the total error and mean squared error
                     totalError += error;
                     mse+= error * error;                
                 }

@@ -189,32 +189,32 @@ namespace Puan_Tahmini
 
 
             // Farklı öğrenme katsayısı, epok sayısı ile karşılaştırma
-            //Neuron[] ANN = new Neuron[9];
-            //for (int i = 0; i < ANN.Length; i++)
-            //{
-            //    ANN[i] = new Neuron();
-            //}
-            //ANN[0].Train(0.01, 10);
-            //ANN[1].Train(0.01, 50);
-            //ANN[2].Train(0.01, 100);
-            //ANN[3].Train(0.025, 10);
-            //ANN[4].Train(0.025, 50);
-            //ANN[5].Train(0.025, 100);
-            //ANN[6].Train(0.05, 10);
-            //ANN[7].Train(0.05, 50);
-            //ANN[8].Train(0.05, 100);
-            //double[] mseArray = new double[9];
+            Neuron[] ANN = new Neuron[9];
+            for (int i = 0; i < ANN.Length; i++)
+            {
+                ANN[i] = new Neuron();
+            }
+            ANN[0].Train(0.01, 10);
+            ANN[1].Train(0.01, 50);
+            ANN[2].Train(0.01, 100);
+            ANN[3].Train(0.025, 10);
+            ANN[4].Train(0.025, 50);
+            ANN[5].Train(0.025, 100);
+            ANN[6].Train(0.05, 10);
+            ANN[7].Train(0.05, 50);
+            ANN[8].Train(0.05, 100);
+            double[] mseArray = new double[9];
 
-            //for (int i = 0; i < mseArray.Length; i++)
-            //{
-            //    mseArray[i] = ANN[i].getMSE();
-            //}
+            for (int i = 0; i < mseArray.Length; i++)
+            {
+                mseArray[i] = ANN[i].getMSE();
+            }
 
-            //for (int j = 0; j < mseArray.Length; j++)
-            //{
-            //    Console.WriteLine();
-            //    Console.WriteLine(mseArray[j]);
-            //}
+            for (int j = 0; j < mseArray.Length; j++)
+            {
+                Console.WriteLine();
+                Console.WriteLine(mseArray[j]);
+            }
 
 
             //// Learning Rate=0.001

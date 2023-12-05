@@ -1,0 +1,7 @@
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Predictive_Academic_Performance_Model.csproj.AssemblyReference.cache
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Predictive_Academic_Performance_Model.csproj.CoreCompileInputs.cache
+C:\Users\hakan\source\repos\Puan_Tahmini\bin\Debug\Predictive_Academic_Performance_Model.exe.config
+C:\Users\hakan\source\repos\Puan_Tahmini\bin\Debug\Predictive_Academic_Performance_Model.exe
+C:\Users\hakan\source\repos\Puan_Tahmini\bin\Debug\Predictive_Academic_Performance_Model.pdb
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Predictive_Academic_Performance_Model.exe
+C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Predictive_Academic_Performance_Model.pdb

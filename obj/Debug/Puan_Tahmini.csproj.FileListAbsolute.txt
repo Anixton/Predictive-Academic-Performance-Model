@@ -1,7 +1,0 @@
-C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Puan_Tahmini.csproj.AssemblyReference.cache
-C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Puan_Tahmini.csproj.CoreCompileInputs.cache
-C:\Users\hakan\source\repos\Puan_Tahmini\bin\Debug\Puan_Tahmini.exe.config
-C:\Users\hakan\source\repos\Puan_Tahmini\bin\Debug\Puan_Tahmini.exe
-C:\Users\hakan\source\repos\Puan_Tahmini\bin\Debug\Puan_Tahmini.pdb
-C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Puan_Tahmini.exe
-C:\Users\hakan\source\repos\Puan_Tahmini\obj\Debug\Puan_Tahmini.pdb

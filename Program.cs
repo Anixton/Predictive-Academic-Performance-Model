@@ -14,6 +14,8 @@ namespace Predictive_Academic_Performance_Model
         private double weightOfAttendance;
         private double bias;
         private double mse;
+        
+        // Our data is stored in 2d Array
         public double[,] doubleArray = new double[21, 3]
         {
             {7.6, 11, 77},
@@ -47,10 +49,7 @@ namespace Predictive_Academic_Performance_Model
             // random positive values between 0.0 and 1
             Random random = new Random((int)DateTime.Now.Ticks);
             double randomDouble1 = random.NextDouble();
-            double randomDouble2 = random.NextDouble();
-
-           
-
+            double randomDouble2 = random.NextDouble();     
 
             weightOfStudy = randomDouble1;
             weightOfAttendance = randomDouble2;
@@ -120,7 +119,7 @@ namespace Predictive_Academic_Performance_Model
         private void targetExpectedComparison()
         {
             // Display column labels with fixed-width columns
-            Console.WriteLine("Çalışma        Derse Katılma     Sınav Sonucu      Tahmin");
+            Console.WriteLine("Study         Attendance     Exam Result     Prediction");
 
             // Format and print the model's output for the same data with fixed-width columns
             for (int i = 0; i < this.doubleArray.GetLength(0); i++)
@@ -171,12 +170,11 @@ namespace Predictive_Academic_Performance_Model
             // Debugging and development may be more effective in debug mode.
             // Be cautious when making changes and thoroughly test in both modes.
 
-
-            // 0.05 öğrenme katsayılı ve 10 epoklu eğitim
+            // Training with 0.05 Learning Rate and 10 Epoches
             //Neuron ANN = new Neuron();
             //ANN.Train(0.05, 100);
 
-            // Modelin Görmediği veriden sınav sonucu tahmini
+            // Predicting exam results from unseen data using the model
             //Neuron ANN = new Neuron();
             //ANN.Train(0.05, 100);
             //ANN.makePrediction(9, 8);
@@ -186,7 +184,7 @@ namespace Predictive_Academic_Performance_Model
             //ANN.makePrediction(10, 10);
 
 
-            // Farklı öğrenme katsayısı, epok sayısı ile karşılaştırma
+            // Comparing MSE values with different Learning Rate and Epoch Count
             Neuron[] ANN = new Neuron[9];
             for (int i = 0; i < ANN.Length; i++)
             {
@@ -215,7 +213,7 @@ namespace Predictive_Academic_Performance_Model
             }
 
 
-            //// Learning Rate=0.001
+            // Learning Rate=0.001
             //Neuron firstANN = new Neuron();
             //firstANN.Train(0.001, 10);
 
@@ -226,7 +224,7 @@ namespace Predictive_Academic_Performance_Model
             //thirdANN.Train(0.001, 100);
 
 
-            //// Learning Rate=0.0025
+            // Learning Rate=0.0025
             //Neuron firstANN = new Neuron();
             //firstANN.Train(0.0025, 10);
 
@@ -237,7 +235,7 @@ namespace Predictive_Academic_Performance_Model
             //thirdANN.Train(0.0025, 100);
 
 
-            ////Learning Rate = 0.005
+            ///Learning Rate = 0.005
             //Neuron firstANN = new Neuron();
             //firstANN.Train(0.005, 10);
 

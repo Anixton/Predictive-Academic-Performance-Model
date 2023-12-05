@@ -1,2 +1,1 @@
-# Puan_Tahmini
- DSA Project 2
+# Predictive Academic Performance Model

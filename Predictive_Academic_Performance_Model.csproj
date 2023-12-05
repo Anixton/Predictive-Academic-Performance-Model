@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{53EE1A55-3F30-41FA-A529-DBB87AEDFB47}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Puan_Tahmini</RootNamespace>
-    <AssemblyName>Puan_Tahmini</AssemblyName>
+    <RootNamespace>Predictive_Academic_Performance_Model</RootNamespace>
+    <AssemblyName>Predictive_Academic_Performance_Model</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

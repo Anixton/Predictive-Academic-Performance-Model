@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puan_Tahmini", "Puan_Tahmini.csproj", "{53EE1A55-3F30-41FA-A529-DBB87AEDFB47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Predictive_Academic_Performance_Model", "Predictive_Academic_Performance_Model.csproj", "{53EE1A55-3F30-41FA-A529-DBB87AEDFB47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

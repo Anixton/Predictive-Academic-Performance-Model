@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Puan_Tahmini
+namespace Predictive_Academic_Performance_Model
 {
     public class Neuron
     {
@@ -14,8 +14,6 @@ namespace Puan_Tahmini
         private double weightOfAttendance;
         private double bias;
         private double mse;
-
-        // doubleArray[Çalışma Süresi, Derse Devam, Sınav Sonucu]
         public double[,] doubleArray = new double[21, 3]
         {
             {7.6, 11, 77},

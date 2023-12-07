@@ -14,8 +14,8 @@ namespace Predictive_Academic_Performance_Model
         private double weightOfAttendance;
         private double bias;
         private double mse;
-        
-        // Our data is stored in 2d Array
+
+        // Our Data is stored in 2D Array
         public double[,] doubleArray = new double[21, 3]
         {
             {7.6, 11, 77},
@@ -49,7 +49,7 @@ namespace Predictive_Academic_Performance_Model
             // random positive values between 0.0 and 1
             Random random = new Random((int)DateTime.Now.Ticks);
             double randomDouble1 = random.NextDouble();
-            double randomDouble2 = random.NextDouble();     
+            double randomDouble2 = random.NextDouble();
 
             weightOfStudy = randomDouble1;
             weightOfAttendance = randomDouble2;
@@ -59,9 +59,9 @@ namespace Predictive_Academic_Performance_Model
 
             for (int i = 0; i < 21; i++)
             {
-                doubleArray[i, 0] /= 10;    
-                doubleArray[i, 1] /= 15;    
-                doubleArray[i, 2] /= 100;   
+                doubleArray[i, 0] /= 10;
+                doubleArray[i, 1] /= 15;
+                doubleArray[i, 2] /= 100;
             }
 
         }
@@ -77,6 +77,7 @@ namespace Predictive_Academic_Performance_Model
         // Train the neuron using the provided learning rate and number of epochs
         public void Train(double learningRate, int epochs)
         {
+            Console.WriteLine("-----------------------------------------------------------------------");
             for (int epoch = 0; epoch < epochs; epoch++)
             {
                 double totalError = 0;
@@ -105,21 +106,23 @@ namespace Predictive_Academic_Performance_Model
 
                     // Track the total error and mean squared error
                     totalError += error;
-                    mse+= error * error;                
+                    mse += error * error;
                 }
 
                 mse /= doubleArray.GetLength(0);
 
-                Console.WriteLine($"Epoch {epoch + 1}, Total Error: {totalError}, MSE: {this.getMSE()}");             
+                Console.WriteLine($"Epoch {epoch + 1}, Total Error: {totalError}, MSE: {this.getMSE()}");
             }
+            Console.WriteLine("-----------------------------------------------------------------------");
             targetExpectedComparison();
+            Console.WriteLine("-----------------------------------------------------------------------");
         }
 
         // Display the comparison between target and expected values
         private void targetExpectedComparison()
         {
             // Display column labels with fixed-width columns
-            Console.WriteLine("Study         Attendance     Exam Result     Prediction");
+            Console.WriteLine("Work          Attendance       Exam Result       Prediction");
 
             // Format and print the model's output for the same data with fixed-width columns
             for (int i = 0; i < this.doubleArray.GetLength(0); i++)
@@ -149,20 +152,31 @@ namespace Predictive_Academic_Performance_Model
         public void makePrediction(double studyTime, double attendanceTime)
         {
             double firstInput = (studyTime / 10);
-            double secondInput= (attendanceTime / 15);
+            double secondInput = (attendanceTime / 15);
 
-            double expectedVal=ComputeOutput(firstInput, secondInput)*100;
+            double expectedVal = ComputeOutput(firstInput, secondInput) * 100;
 
+            // Save the current console text color
+            ConsoleColor originalColor = Console.ForegroundColor;
+
+            // Set a new text color
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("-----------------------------------------------------------------------");
             Console.WriteLine($"Study Time: {studyTime}");
             Console.WriteLine($"Attendance: {attendanceTime}");
             Console.WriteLine($"Prediction: {expectedVal}");
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------------------------------------");
+
+            // Restore the original console text color
+            Console.ForegroundColor = originalColor;
+
         }
     }
 
     internal class Program
     {
-        
+
 
         static void Main(string[] args)
         {
@@ -185,35 +199,35 @@ namespace Predictive_Academic_Performance_Model
 
 
             // Comparing MSE values with different Learning Rate and Epoch Count
-            Neuron[] ANN = new Neuron[9];
-            for (int i = 0; i < ANN.Length; i++)
-            {
-                ANN[i] = new Neuron();
-            }
-            ANN[0].Train(0.01, 10);
-            ANN[1].Train(0.01, 50);
-            ANN[2].Train(0.01, 100);
-            ANN[3].Train(0.025, 10);
-            ANN[4].Train(0.025, 50);
-            ANN[5].Train(0.025, 100);
-            ANN[6].Train(0.05, 10);
-            ANN[7].Train(0.05, 50);
-            ANN[8].Train(0.05, 100);
-            double[] mseArray = new double[9];
+            //Neuron[] ANN = new Neuron[9];
+            //for (int i = 0; i < ANN.Length; i++)
+            //{
+            //    ANN[i] = new Neuron();
+            //}
+            //ANN[0].Train(0.01, 10);
+            //ANN[1].Train(0.01, 50);
+            //ANN[2].Train(0.01, 100);
+            //ANN[3].Train(0.025, 10);
+            //ANN[4].Train(0.025, 50);
+            //ANN[5].Train(0.025, 100);
+            //ANN[6].Train(0.05, 10);
+            //ANN[7].Train(0.05, 50);
+            //ANN[8].Train(0.05, 100);
+            //double[] mseArray = new double[9];
 
-            for (int i = 0; i < mseArray.Length; i++)
-            {
-                mseArray[i] = ANN[i].getMSE();
-            }
+            //for (int i = 0; i < mseArray.Length; i++)
+            //{
+            //    mseArray[i] = ANN[i].getMSE();
+            //}
 
-            for (int j = 0; j < mseArray.Length; j++)
-            {
-                Console.WriteLine();
-                Console.WriteLine(mseArray[j]);
-            }
+            //for (int j = 0; j < mseArray.Length; j++)
+            //{
+            //    Console.WriteLine();
+            //    Console.WriteLine(mseArray[j]);
+            //}
 
 
-            // Learning Rate=0.001
+            //// Learning Rate=0.001
             //Neuron firstANN = new Neuron();
             //firstANN.Train(0.001, 10);
 
@@ -224,7 +238,7 @@ namespace Predictive_Academic_Performance_Model
             //thirdANN.Train(0.001, 100);
 
 
-            // Learning Rate=0.0025
+            //// Learning Rate=0.0025
             //Neuron firstANN = new Neuron();
             //firstANN.Train(0.0025, 10);
 
@@ -235,7 +249,7 @@ namespace Predictive_Academic_Performance_Model
             //thirdANN.Train(0.0025, 100);
 
 
-            ///Learning Rate = 0.005
+            ////Learning Rate = 0.005
             //Neuron firstANN = new Neuron();
             //firstANN.Train(0.005, 10);
 

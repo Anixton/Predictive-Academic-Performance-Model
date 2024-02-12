@@ -137,12 +137,9 @@ namespace Predictive_Academic_Performance_Model
 
 
             }
-
-            // returns Mean Square Error
             Console.WriteLine($"MSE: {this.getMSE()}");
         }
 
-        // Get the Mean Squared Error
         public double getMSE()
         {
             return mse;
@@ -185,80 +182,44 @@ namespace Predictive_Academic_Performance_Model
             // Be cautious when making changes and thoroughly test in both modes.
 
             // Training with 0.05 Learning Rate and 10 Epoches
-            //Neuron ANN = new Neuron();
-            //ANN.Train(0.05, 100);
+            Neuron ANN = new Neuron();
+            ANN.Train(0.05, 100);
 
             // Predicting exam results from unseen data using the model
-            //Neuron ANN = new Neuron();
-            //ANN.Train(0.05, 100);
-            //ANN.makePrediction(9, 8);
-            //ANN.makePrediction(7.5, 10);
-            //ANN.makePrediction(9, 9);
-            //ANN.makePrediction(8, 11);
-            //ANN.makePrediction(10, 10);
+            ANN.makePrediction(9, 8);
+            ANN.makePrediction(7.5, 10);
+            ANN.makePrediction(9, 9);
+            ANN.makePrediction(8, 11);
+            ANN.makePrediction(10, 10);
 
 
             // Comparing MSE values with different Learning Rate and Epoch Count
-            //Neuron[] ANN = new Neuron[9];
-            //for (int i = 0; i < ANN.Length; i++)
-            //{
-            //    ANN[i] = new Neuron();
-            //}
-            //ANN[0].Train(0.01, 10);
-            //ANN[1].Train(0.01, 50);
-            //ANN[2].Train(0.01, 100);
-            //ANN[3].Train(0.025, 10);
-            //ANN[4].Train(0.025, 50);
-            //ANN[5].Train(0.025, 100);
-            //ANN[6].Train(0.05, 10);
-            //ANN[7].Train(0.05, 50);
-            //ANN[8].Train(0.05, 100);
-            //double[] mseArray = new double[9];
+            Neuron[] ANN = new Neuron[9];
+            for (int i = 0; i < ANN.Length; i++)
+            {
+                ANN[i] = new Neuron();
+            }
+            ANN[0].Train(0.01, 10);
+            ANN[1].Train(0.01, 50);
+            ANN[2].Train(0.01, 100);
+            ANN[3].Train(0.025, 10);
+            ANN[4].Train(0.025, 50);
+            ANN[5].Train(0.025, 100);
+            ANN[6].Train(0.05, 10);
+            ANN[7].Train(0.05, 50);
+            ANN[8].Train(0.05, 100);
+            double[] mseArray = new double[9];
 
-            //for (int i = 0; i < mseArray.Length; i++)
-            //{
-            //    mseArray[i] = ANN[i].getMSE();
-            //}
+            for (int i = 0; i < mseArray.Length; i++)
+            {
+                mseArray[i] = ANN[i].getMSE();
+            }
 
-            //for (int j = 0; j < mseArray.Length; j++)
-            //{
-            //    Console.WriteLine();
-            //    Console.WriteLine(mseArray[j]);
-            //}
-
-
-            //// Learning Rate=0.001
-            //Neuron firstANN = new Neuron();
-            //firstANN.Train(0.001, 10);
-
-            //Neuron secondANN = new Neuron();
-            //secondANN.Train(0.001, 50);
-
-            //Neuron thirdANN = new Neuron();
-            //thirdANN.Train(0.001, 100);
-
-
-            //// Learning Rate=0.0025
-            //Neuron firstANN = new Neuron();
-            //firstANN.Train(0.0025, 10);
-
-            //Neuron secondANN = new Neuron();
-            //secondANN.Train(0.0025, 50);
-
-            //Neuron thirdANN = new Neuron();
-            //thirdANN.Train(0.0025, 100);
-
-
-            ////Learning Rate = 0.005
-            //Neuron firstANN = new Neuron();
-            //firstANN.Train(0.005, 10);
-
-            //Neuron secondANN = new Neuron();
-            //secondANN.Train(0.005, 50);
-
-            //Neuron thirdANN = new Neuron();
-            //thirdANN.Train(0.005, 100);
-
+            for (int j = 0; j < mseArray.Length; j++)
+            {
+                Console.WriteLine();
+                Console.WriteLine(mseArray[j]);
+            }
 
 
             // In Statistics, Mean Squared Error (MSE) is defined as Mean or
@@ -267,7 +228,7 @@ namespace Predictive_Academic_Performance_Model
             //MSE is used to check how close estimates or forecasts are to actual values. Lower the MSE, the closer is forecast to actual.
             //This is used as a model evaluation measure for regression models and the lower value indicates a better fit
 
-            // resource
+            // MSE Resource 
             // https://www.mygreatlearning.com/blog/mean-square-error-explained/#:~:text=In%20Statistics%2C%20Mean%20Squared%20Error,between%20actual%20and%20estimated%20values.
 
 
